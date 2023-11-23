@@ -53,7 +53,7 @@ const  Addcomments = (props) => {
   return (
     <div id="content" style={{ padding: '20px', backgroundColor: 'rgb(237, 229, 229)', boxShadow: '0px 2px 10px rgba(0, 0, 0, 0.1)' }}>
       <form autoComplete="off" onSubmit={handleSubmit}>
-        <h2 style={{ marginBottom: '20px' }}>Comment Form</h2>
+        <h2 style={{ marginBottom: '20px' }}>Add Comment Form</h2>
         <TextField
         id="comment"
         name="comment"
