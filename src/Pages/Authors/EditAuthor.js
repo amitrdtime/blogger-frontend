@@ -27,7 +27,7 @@ const EditAuthor = (props) => {
 
     axios({
       method: 'put',
-      url: `http://localhost:5000/author/updateauth/${props.selectedAuther._id}`,
+      url: `${process.env.REACT_APP_API_URL}/author/updateauth/${props.selectedAuther._id}`,
       data: authInput,
       headers: {
             token: localStorage.getItem('token')

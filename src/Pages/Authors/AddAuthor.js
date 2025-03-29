@@ -21,7 +21,7 @@ const AddAuthor = (props) => {
 
     axios({
       method: 'post',
-      url: `${process.env.APIBASEURL}/author/addauth`,
+      url: `${process.env.REACT_APP_API_URL}/author/addauth`,
       data: authInput,
       headers: {
             token: localStorage.getItem('token')

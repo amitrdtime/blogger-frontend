@@ -12,7 +12,8 @@ import Accounts from './Pages/Accounts/Accounts';
 import Comments from './Pages/Comments/Comments';
 import Posts from './Pages/Posts/Posts';
 import Category from './Pages/Categoray/Categoray';
- import Loginform from './Pages/login/Loginform';
+import Loginform from './Pages/login/Loginform';
+import Logout from './Pages/Logout/Logout';
 
 
 function App() {
@@ -38,7 +39,8 @@ function App() {
                 <Route path="posts" element={ <Posts/> } />
                 <Route path="cat" element={ <Category/> } />
 
-                <Route path="login" element={ <Loginform/> } />
+                <Route path="/" element={ <Loginform/> } />
+                <Route path="logout" element={ <Logout/> } />
               </Routes> 
             </switch>
           </Box>

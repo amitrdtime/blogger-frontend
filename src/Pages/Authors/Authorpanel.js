@@ -10,6 +10,9 @@ import AddAuthor from './AddAuthor';
 import EditAuthor from './EditAuthor';
 
 const Authorpanel = () => {
+
+  const apiUrl = process.env.REACT_APP_API_URL;
+  console.log("API URL:", apiUrl);
   
   const [authors, setauthor] = useState([]);
   const [selectedAuther,setSelectedAuther] = useState(null)
@@ -28,6 +31,7 @@ const Authorpanel = () => {
           <Button
             onClick={(e) => onUpdateHandler(e, params.row)}
             variant="contained"
+            sx={{ marginRight: '3%' }}
           >
             Update
           </Button>
@@ -44,7 +48,7 @@ const Authorpanel = () => {
 
   useEffect(() => {
     axios
-      .get('http://localhost:5000/author/authlist')
+      .get(`${process.env.REACT_APP_API_URL}/author/authlist`)
       .then((response) => {
         console.log(response.data)
         setauthor(response.data);
@@ -65,7 +69,7 @@ const Authorpanel = () => {
         cancelButtonText:"No",
       }).then(result =>{
           if (result.value) {
-            let deleteAuthApi =  `http://localhost:5000/author/deleteauth/${authId}`;
+            let deleteAuthApi =  `${process.env.REACT_APP_API_URL}/author/deleteauth/${authId}`;
             axios.delete(deleteAuthApi, {
                     headers: {
                         token: localStorage.getItem('token')
